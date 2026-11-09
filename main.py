@@ -57,6 +57,15 @@ def show_result(name, user_number, computer_number, result):
 def show_score(name, my_wins, computer_wins):
     print(f"\n현재 스코어 {name} {my_wins} : {computer_wins} 컴퓨터\n") # 게스트 1 : 0 컴퓨터
 
+# 최종 결과 표시
+def show_final_result(name, my_wins, computer_wins):
+    print("-"*40)
+    print(f"[최종 결과] {name} {my_wins} : {computer_wins} 컴퓨터")
+    if my_wins > computer_wins:
+        print(f"==> {name} 최종 승리!")
+    else:
+        print("==> 컴퓨터 승리!")
+
 # 게임 루프 (3판 2선승제)
 def play_game(name):
     my_wins = 0
@@ -73,8 +82,10 @@ def play_game(name):
         elif result == "패배":
             computer_wins += 1
 
-        show_score(name, my_wins, computer_wins)
         show_result(name, user_number, computer_number, result)
+        show_score(name, my_wins, computer_wins)
+
+    show_final_result(name, my_wins, computer_wins)
 
 # 게임의 전체 루프
 def main():
