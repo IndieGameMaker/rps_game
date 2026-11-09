@@ -45,6 +45,12 @@ def check_result(user_number, computer_number):
 
     return "패배"
 
+# 한 판의 게임 결과 출력
+def show_result(name, user_number, computer_number, result):
+    print("\n[게임 결과]")
+    print(f"{name}: {HANDS[user_number]} vs 컴퓨터: {HANDS[computer_number]}")
+    print(f"=> {result}")
+
 # 게임의 전체 루프
 def main():
     show_title()
@@ -52,7 +58,10 @@ def main():
 
     user_number = ask_number()
     computer_number = random.randint(1, 3) # 1, 2, 3
-    print(f"{name}님, 컴퓨터는 {HANDS[computer_number]}를 냈습니다.")
+
+    # 승패 판정
+    result = check_result(user_number, computer_number)
+    show_result(name, user_number, computer_number, result)
 
 # 게임 시작
 main()
