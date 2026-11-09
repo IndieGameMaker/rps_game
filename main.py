@@ -126,10 +126,12 @@ def main():
         my_won = play_game(name)
         if my_won:
             co_wins += 1    # 연승기록 누적
+            print(f"\n현재 연승: {co_wins}연승")
         else:
             co_wins = 0     # 연승기록 초기화
 
-        print(f"\n현재 연승: {co_wins}연승")
+        # if co_wins > 0:
+        #     print(f"\n현재 연승: {co_wins}연승")
 
         if not ask_play_again():
             break
