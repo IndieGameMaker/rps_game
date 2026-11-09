@@ -29,6 +29,13 @@ def ask_number():
 
         print("1, 2, 3 중에서 입력하세요.")
 
+# 승패 판정
+# 1 - 1 / 2 - 2 / 3 - 3 무승부 조건
+# 1 - 3 / 2 - 1 / 3 - 2 플레이어 승리 조건
+# 반환값 : 무승부 / 승리 / 패배
+def check_result(user_number, computer_number):
+
+
 
 # 게임의 전체 루프
 def main():
