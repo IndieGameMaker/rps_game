@@ -34,8 +34,16 @@ def ask_number():
 # 1 - 3 / 2 - 1 / 3 - 2 플레이어 승리 조건
 # 반환값 : 무승부 / 승리 / 패배
 def check_result(user_number, computer_number):
+    # 무승부 조건
+    if user_number == computer_number:
+        return "무승부"
 
+    # 플레이어 승리 조건
+    if user_number == 1 and computer_number == 3: return "승리" # 가위 / 보
+    if user_number == 2 and computer_number == 1: return "승리" # 바위 / 가위
+    if user_number == 3 and computer_number == 2: return "승리" # 보 / 바위
 
+    return "패배"
 
 # 게임의 전체 루프
 def main():
