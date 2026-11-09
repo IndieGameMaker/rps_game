@@ -117,9 +117,9 @@ def play_game(name):
 def main():
     show_title()
     name = ask_name()
-    play_game(name)
 
     while True:
+        play_game(name)
         if not ask_play_again():
             break
 
